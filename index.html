@@ -3,96 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - GlobalXpose</title>
+    <title>GlobalXpose - Coming Soon</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #111;
             color: white;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
         }
-        .container {
+        header {
+            background-color: #d60000;
+            width: 100%;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+        }
+        .menu-icon { font-size: 24px; cursor: pointer; }
+        .menu {
+            display: none;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+            top: 60px;
+            right: 10px;
+            background: #222;
+            padding: 10px;
+            border-radius: 5px;
         }
-        h1 {
-            font-size: 40px;
-            color: #d60000;
-            margin-bottom: 10px;
+        .menu a {
+            display: block;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
         }
-        p {
-            font-size: 18px;
-            color: #bbb;
-        }
+        .menu a:hover { background: #444; }
+        h1 { color: #d60000; font-size: 35px; margin-top: 80px; }
+        p { font-size: 18px; color: #bbb; margin-bottom: 20px; }
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            font-size: 24px;
-            font-weight: bold;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .box {
             background: #222;
             padding: 15px;
             border-radius: 8px;
-            min-width: 80px;
+            min-width: 70px;
+            text-align: center;
         }
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            font-size: 14px;
-            color: #888;
+        .box span {
+            font-size: 22px;
+            font-weight: bold;
+            display: block;
+        }
+        .footer { position: absolute; bottom: 10px; width: 100%; font-size: 14px; color: #888; }
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            p { font-size: 16px; }
+            .box { min-width: 60px; padding: 10px; }
+            .box span { font-size: 18px; }
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>GlobalXpose is Coming Soon</h1>
-        <p>We are working hard to bring the truth to light. Stay tuned!</p>
-        <div class="countdown">
-            <div class="box">
-                <span id="days">00</span><br>Days
-            </div>
-            <div class="box">
-                <span id="hours">00</span><br>Hours
-            </div>
-            <div class="box">
-                <span id="minutes">00</span><br>Minutes
-            </div>
-            <div class="box">
-                <span id="seconds">00</span><br>Seconds
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        &copy; 2025 GlobalXpose. All rights reserved.
-    </div>
-
     <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
         function updateCountdown() {
             const targetDate = new Date("June 14, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const difference = targetDate - now;
 
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
+            document.getElementById("days").innerText = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((difference % (1000 * 60)) / 1000);
         }
-
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
+</head>
+<body>
+    <header>
+        <span>GlobalXpose</span>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </header>
+    <div id="menu" class="menu">
+        <a href="#">Home</a>
+        <a href="#">Exposé</a>
+        <a href="#">AI Assistant</a>
+        <a href="#">Report</a>
+    </div>
+    <h1>GlobalXpose is Coming Soon</h1>
+    <p>We are working hard to bring the truth to light. Stay tuned!</p>
+    <div class="countdown">
+        <div class="box"><span id="days">00</span>Days</div>
+        <div class="box"><span id="hours">00</span>Hours</div>
+        <div class="box"><span id="minutes">00</span>Minutes</div>
+        <div class="box"><span id="seconds">00</span>Seconds</div>
+    </div>
+    <div class="footer">&copy; 2025 GlobalXpose. All rights reserved.</div>
 </body>
 </html>
