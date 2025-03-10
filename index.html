@@ -106,3 +106,52 @@
     </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+</head>
+<body>
+    <div class="container">
+        <h1>GlobalXpose is Coming Soon</h1>
+        <p>We are working hard to bring the truth to light. Stay tuned!</p>
+        <div class="countdown">
+            <div class="box">
+                <span id="days">00</span><br>Days
+            </div>
+            <div class="box">
+                <span id="hours">00</span><br>Hours
+            </div>
+            <div class="box">
+                <span id="minutes">00</span><br>Minutes
+            </div>
+            <div class="box">
+                <span id="seconds">00</span><br>Seconds
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2025 GlobalXpose. All rights reserved.
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("June 14, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
+
