@@ -3,39 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalXpose</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Coming Soon - GlobalXpose</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        .container {
+            max-width: 90%;
+        }
+        h1 {
+            font-size: 35px;
+            color: #d60000;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .box {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 70px;
+            text-align: center;
+        }
+        .box span {
+            font-size: 22px;
+            font-weight: bold;
+            display: block;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            font-size: 14px;
+            color: #888;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 28px; }
+            p { font-size: 16px; }
+            .box { min-width: 60px; padding: 10px; }
+            .box span { font-size: 18px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div id="title">
-            <h1>GlobalXpose</h1>
+    <div class="container">
+        <h1>GlobalXpose is Coming Soon</h1>
+        <p>We are working hard to bring the truth to light. Stay tuned!</p>
+        <div class="countdown">
+            <div class="box">
+                <span id="days">00</span>Days
+            </div>
+            <div class="box">
+                <span id="hours">00</span>Hours
+            </div>
+            <div class="box">
+                <span id="minutes">00</span>Minutes
+            </div>
+            <div class="box">
+                <span id="seconds">00</span>Seconds
+            </div>
         </div>
-        <div id="live-date">
-            <p id="date"></p>
-        </div>
-    </header>
+    </div>
+    <div class="footer">
+        &copy; 2025 GlobalXpose. All rights reserved.
+    </div>
 
-    <!-- Countdown Section -->
-    <section id="countdown">
-        <h2>Coming Soon! Countdown:</h2>
-        <div id="timer"></div>
-    </section>
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("June 14, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
 
-    <!-- Footer Section -->
-    <footer>
-        <div id="follow-us">
-            <p>Follow Us By Email:</p>
-            <input type="email" id="email" placeholder="Enter your email">
-        </div>
-        <div id="social-media">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://twitter.com" target="_blank">Twitter</a>
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://youtube.com" target="_blank">YouTube</a>
-        </div>
-    </footer>
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    <script src="script.js"></script>
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
