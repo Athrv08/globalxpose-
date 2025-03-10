@@ -3,48 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalXpose - Exposing the Truth</title>
+    <title>GlobalXpose</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <img src="https://i.ibb.co/mVnW6xxy" alt="GlobalXpose Logo" class="logo">
+        <div id="title">
+            <h1>GlobalXpose</h1>
         </div>
-        <div class="date" id="current-date"></div>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div id="live-date">
+            <p id="date"></p>
+        </div>
     </header>
-    
-    <nav id="menu" class="menu">
-        <a href="#latest">Latest Posts</a>
-        <a href="#popular">Popular Posts</a>
-        <a href="#trending">Trending Topics</a>
-    </nav>
-    
-    <section id="latest" class="section">
-        <h2>Latest Exposés</h2>
-        <p>Stay updated with the latest truth revelations.</p>
+
+    <!-- Countdown Section -->
+    <section id="countdown">
+        <h2>Coming Soon! Countdown:</h2>
+        <div id="timer"></div>
     </section>
-    
-    <section id="popular" class="section">
-        <h2>Popular Posts</h2>
-        <p>Most viewed and impactful exposés.</p>
-    </section>
-    
-    <section id="trending" class="section">
-        <h2>Trending Topics</h2>
-        <p>What's making waves globally.</p>
-    </section>
-    
-    <div id="signup-popup" class="popup">
-        <p>Join our Newsletter to stay updated!</p>
-        <button onclick="closePopup('signup-popup')">Close</button>
-    </div>
-    
-    <div id="donation-popup" class="popup">
-        <p>Support our mission by donating.</p>
-        <button onclick="closePopup('donation-popup')">Close</button>
-    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div id="follow-us">
+            <p>Follow Us By Email:</p>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div id="social-media">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
