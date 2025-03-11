@@ -72,6 +72,7 @@
             justify-content: center;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .box {
             background: #d60000;
@@ -84,6 +85,49 @@
             margin-top: 30px;
             padding: 15px;
             background-color: #222;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) { /* Tablets and smaller */
+            header {
+                font-size: 20px;
+                padding: 10px;
+            }
+            .menu {
+                top: 45px;
+                right: 5px;
+            }
+            .coming-soon {
+                padding: 40px 15px;
+            }
+            .countdown {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .box {
+                font-size: 18px;
+                padding: 12px 20px;
+            }
+        }
+
+        @media (max-width: 480px) { /* Mobile Phones */
+            header {
+                font-size: 18px;
+                padding: 8px;
+            }
+            .menu-icon {
+                font-size: 20px;
+            }
+            .coming-soon h1 {
+                font-size: 22px;
+            }
+            .coming-soon p {
+                font-size: 16px;
+            }
+            .box {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
         }
     </style>
     <script>
