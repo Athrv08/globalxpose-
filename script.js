@@ -40,3 +40,7 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
     event.preventDefault();
     alert("Message Sent! We will get back to you soon.");
 });
+
+<script>
+  alert("JS is working!");
+</script>
