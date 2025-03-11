@@ -23,6 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         .menu-icon {
             font-size: 24px;
@@ -57,13 +58,15 @@
             justify-content: center;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .box {
             background: #d60000;
-            padding: 12px 18px;
+            padding: 10px 15px;
             font-size: 18px;
             border-radius: 5px;
             font-weight: bold;
+            min-width: 60px;
         }
         .button {
             background-color: #d60000;
@@ -87,7 +90,7 @@
             border-radius: 5px;
         }
         .input-field {
-            width: 80%;
+            width: 90%;
             padding: 10px;
             margin: 10px 0;
             border: none;
@@ -97,6 +100,25 @@
             margin-top: 30px;
             padding: 15px;
             background-color: #1a2238;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu {
+                right: 5px;
+            }
+            .countdown {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .box {
+                padding: 8px 12px;
+                font-size: 16px;
+                min-width: 50px;
+            }
+            .contact {
+                margin: 20px;
+                padding: 20px;
+            }
         }
     </style>
     <script>
@@ -170,3 +192,4 @@
 
 </body>
 </html>
+
