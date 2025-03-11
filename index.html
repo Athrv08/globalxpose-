@@ -10,10 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #0a0f1e, #1a2238);
+            background-color: #0a0f1e; /* Black-Blue */
             color: white;
             text-align: center;
-            transition: 0.5s;
         }
         /* Header & Menu */
         header {
@@ -24,6 +23,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
         }
         .menu-icon {
             font-size: 24px;
@@ -48,19 +48,10 @@
         .menu a:hover {
             background-color: #444;
         }
-        /* Typewriter Effect */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        /* Coming Soon Section */
+        .coming-soon {
+            padding: 50px 20px;
         }
-        .typing-text {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid white;
-            width: 0;
-            animation: typing 3s steps(30, end) forwards;
-        }
-        /* Countdown Timer */
         .countdown {
             display: flex;
             justify-content: center;
@@ -73,7 +64,6 @@
             font-size: 18px;
             border-radius: 5px;
             font-weight: bold;
-            transition: 0.3s;
         }
         .button {
             background-color: #d60000;
@@ -87,55 +77,43 @@
         }
         .button:hover {
             background-color: #b50000;
-            transform: scale(1.1);
         }
-        /* Wave Animation */
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('https://i.imgur.com/MehCw3X.png');
-            animation: wave 5s infinite linear;
+        /* Contact Us */
+        .contact {
+            padding: 30px;
+            background-color: #1a2238;
+            margin: 30px auto;
+            border-radius: 5px;
+            width: 80%;
         }
-        @keyframes wave {
-            from { background-position-x: 0; }
-            to { background-position-x: 1000px; }
+        .input-field {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
         }
-        /* Social Media Icons */
-        .social-icons {
-            margin-top: 20px;
-        }
-        .social-icons a {
+        form button {
+            width: 92%;
+            padding: 10px;
+            background: #d60000;
+            border: none;
             color: white;
-            margin: 0 10px;
-            font-size: 24px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .social-icons a:hover {
-            color: #d60000;
-        }
-        /* Light/Dark Mode */
-        .mode-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: white;
-            color: black;
-            padding: 5px 10px;
+            font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
         }
-        .dark-mode {
-            background: #111;
-            color: white;
+        form button:hover {
+            background: #b50000;
         }
+        /* Footer Fixed */
         .footer {
-            margin-top: 30px;
-            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             background-color: #1a2238;
+            padding: 10px;
+            text-align: center;
         }
     </style>
     <script>
@@ -158,15 +136,9 @@
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
-        function toggleMode() {
-            document.body.classList.toggle('dark-mode');
-        }
     </script>
 </head>
 <body>
-
-    <!-- Mode Toggle -->
-    <div class="mode-toggle" onclick="toggleMode()">☀️/🌙</div>
 
     <!-- Header & Menu -->
     <header>
@@ -180,29 +152,40 @@
 
     <!-- Coming Soon Section -->
     <div class="coming-soon">
-        <h1 class="typing-text">GlobalXpose is Coming Soon</h1>
+        <h1>GlobalXpose is Coming Soon</h1>
         <p>We are working hard to bring the truth to light. Stay tuned!</p>
         <div class="countdown">
-            <div class="box"><span id="days">00</span><br>Days</div>
-            <div class="box"><span id="hours">00</span><br>Hours</div>
-            <div class="box"><span id="minutes">00</span><br>Minutes</div>
-            <div class="box"><span id="seconds">00</span><br>Seconds</div>
+            <div class="box">
+                <span id="days">00</span><br>Days
+            </div>
+            <div class="box">
+                <span id="hours">00</span><br>Hours
+            </div>
+            <div class="box">
+                <span id="minutes">00</span><br>Minutes
+            </div>
+            <div class="box">
+                <span id="seconds">00</span><br>Seconds
+            </div>
         </div>
         <button class="button">Notify Me</button>
     </div>
 
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-        <a href="#">📘</a>
-        <a href="#">🐦</a>
-        <a href="#">📷</a>
-        <a href="#">▶️</a>
+    <!-- Contact Us Page -->
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="https://formsubmit.co/globalxpose@gmail.com" method="POST">
+            <input type="text" name="name" class="input-field" placeholder="Your Name" required><br>
+            <input type="email" name="email" class="input-field" placeholder="Your Email" required><br>
+            <textarea name="message" class="input-field" placeholder="Your Message" rows="4" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
-    <div class="wave"></div>
-
-    <!-- Footer -->
-    <div class="footer">&copy; 2025 GlobalXpose. All rights reserved.</div>
+    <!-- Footer Fixed -->
+    <div class="footer">
+        &copy; 2025 GlobalXpose. All rights reserved.
+    </div>
 
 </body>
 </html>
