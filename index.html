@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalXpose - Truth Unveiled</title>
+    <title>GlobalXpose - Coming Soon</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #111;
+            background-color: #0a0f1e; /* Black-Blue */
             color: white;
             text-align: center;
         }
+        /* Header & Menu */
         header {
-            background-color: #d60000;
+            background-color: #0b132b;
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
@@ -31,7 +33,7 @@
             position: absolute;
             top: 50px;
             right: 10px;
-            background-color: #222;
+            background-color: #1a2238;
             border-radius: 5px;
             padding: 10px;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
@@ -45,93 +47,56 @@
         .menu a:hover {
             background-color: #444;
         }
-        .section {
-            padding: 20px;
-        }
-        .button {
-            background-color: #d60000;
-            padding: 12px 24px;
-            border: none;
-            color: white;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background-color: #b50000;
-        }
-        /* Coming Soon Page */
+        /* Coming Soon Section */
         .coming-soon {
             padding: 50px 20px;
-            background-color: #222;
             text-align: center;
         }
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             margin-top: 20px;
-            flex-wrap: wrap;
         }
         .box {
             background: #d60000;
-            padding: 10px 15px;  /* Reduced padding */
-            font-size: 18px;     /* Reduced font size */
-            border-radius: 8px;
+            padding: 12px 18px;
+            font-size: 18px;
+            border-radius: 5px;
             font-weight: bold;
-            width: 80px;         /* Set fixed width for consistency */
-            text-align: center;  /* Center text inside each box */
+        }
+        .button {
+            background-color: #d60000;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #b50000;
+        }
+        /* Contact Us Page */
+        .contact {
+            padding: 30px;
+            background-color: #1a2238;
+            text-align: center;
+            margin: 30px;
+            border-radius: 5px;
+        }
+        .input-field {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
         }
         .footer {
             margin-top: 30px;
             padding: 15px;
-            background-color: #222;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) { /* Tablets and smaller */
-            header {
-                font-size: 20px;
-                padding: 10px;
-            }
-            .menu {
-                top: 45px;
-                right: 5px;
-            }
-            .coming-soon {
-                padding: 40px 15px;
-            }
-            .countdown {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .box {
-                font-size: 16px;
-                padding: 8px 12px;  /* Reduced padding for mobile */
-                width: 60px;        /* Smaller width for mobile */
-            }
-        }
-
-        @media (max-width: 480px) { /* Mobile Phones */
-            header {
-                font-size: 18px;
-                padding: 8px;
-            }
-            .menu-icon {
-                font-size: 20px;
-            }
-            .coming-soon h1 {
-                font-size: 22px;
-            }
-            .coming-soon p {
-                font-size: 16px;
-            }
-            .box {
-                font-size: 16px;
-                padding: 8px 12px;  /* Further reduced padding */
-                width: 60px;        /* Smaller width */
-            }
+            background-color: #1a2238;
         }
     </style>
     <script>
@@ -158,21 +123,18 @@
 </head>
 <body>
 
-    <!-- Main Website -->
+    <!-- Header & Menu -->
     <header>
         <span>GlobalXpose</span>
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
     </header>
     <div id="menu" class="menu">
-        <a href="#coming-soon">Coming Soon</a>
         <a href="#home">Home</a>
-        <a href="#expose">Exposé</a>
-        <a href="#ai">AI Assistant</a>
-        <a href="#report">Report</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <!-- Coming Soon Page (Now Below Menu) -->
-    <div id="coming-soon" class="coming-soon">
+    <!-- Coming Soon Section -->
+    <div class="coming-soon">
         <h1>GlobalXpose is Coming Soon</h1>
         <p>We are working hard to bring the truth to light. Stay tuned!</p>
         <div class="countdown">
@@ -189,31 +151,19 @@
                 <span id="seconds">00</span><br>Seconds
             </div>
         </div>
+        <button class="button">Notify Me</button>
     </div>
 
-    <div id="home" class="section">
-        <h2>Welcome to GlobalXpose</h2>
-        <p>Exposing the truth and educating the world.</p>
+    <!-- Contact Us Page -->
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <input type="text" class="input-field" placeholder="Your Name"><br>
+        <input type="email" class="input-field" placeholder="Your Email"><br>
+        <textarea class="input-field" placeholder="Your Message" rows="4"></textarea><br>
+        <button class="button">Send Message</button>
     </div>
 
-    <div id="expose" class="section">
-        <h2>Latest Exposés</h2>
-        <p>Discover hidden truths and unethical activities.</p>
-        <button class="button">View Reports</button>
-    </div>
-
-    <div id="ai" class="section">
-        <h2>AI Voice Assistant (Premium)</h2>
-        <p>Ask AI for truth verification and research.</p>
-        <button class="button">Try AI</button>
-    </div>
-
-    <div id="report" class="section">
-        <h2>Report a Case</h2>
-        <p>Submit information securely and anonymously.</p>
-        <button class="button">Submit Report</button>
-    </div>
-
+    <!-- Footer -->
     <div class="footer">
         &copy; 2025 GlobalXpose. All rights reserved.
     </div>
