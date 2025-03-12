@@ -21,51 +21,65 @@
             padding: 15px;
             font-size: 24px;
             font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            display: none;
         }
 
         /* Navigation Menu */
         nav {
             background-color: #1a2238;
-            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 250px;
+            height: 100%;
+            padding-top: 20px;
+            transition: 0.3s;
         }
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
         }
         nav ul li {
-            position: relative;
-            padding: 10px;
+            padding: 15px;
             cursor: pointer;
+            border-bottom: 1px solid #444;
+            text-align: left;
         }
         nav ul li a {
             text-decoration: none;
             color: white;
-            padding: 10px;
             display: block;
         }
         nav ul li:hover {
             background-color: #444;
-            border-radius: 5px;
         }
 
         /* Sub-menu */
         .submenu {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #1a2238;
-            padding: 10px;
-            border-radius: 5px;
+            padding-left: 20px;
         }
         .submenu a {
             display: block;
-            padding: 5px;
+            padding: 8px;
         }
-        nav ul li:hover .submenu {
+
+        /* Active Classes */
+        .menu-open {
+            left: 0;
+        }
+        .submenu-open {
             display: block;
         }
 
@@ -120,8 +134,23 @@
             padding: 15px;
             background-color: #1a2238;
         }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+        }
     </style>
     <script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("menu-open");
+        }
+
+        function toggleSubMenu() {
+            document.getElementById("sub-menu").classList.toggle("submenu-open");
+        }
+
         function updateCountdown() {
             const targetDate = new Date("June 14, 2026 00:00:00").getTime();
             const now = new Date().getTime();
@@ -145,15 +174,17 @@
 <body>
 
     <!-- Header -->
-    <header>GlobalXpose</header>
+    <header>
+        GlobalXpose
+        <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    </header>
 
     <!-- Navigation Menu -->
-    <nav>
+    <nav id="nav-menu">
         <ul>
             <li>Home</li>
-            <li>
-                Exposures
-                <div class="submenu">
+            <li onclick="toggleSubMenu()">Exposures ▼
+                <div class="submenu" id="sub-menu">
                     <a href="#">String Operations</a>
                     <a href="#">Countries</a>
                     <a href="#">Pornography</a>
