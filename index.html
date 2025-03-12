@@ -4,196 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalXpose - Coming Soon</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background: linear-gradient(to right, #0a0f1e, #1a2238);
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
-        
-        /* Header & Menu */
-        header {
-            background-color: rgba(11, 19, 43, 0.9);
-            padding: 15px;
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        .menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #1a2238;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-        }
-        .menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-        .menu a:hover {
-            background-color: #444;
-        }
-
-        /* Typing Effect */
-        .typing-container {
-            margin-top: 100px;
-            font-size: 28px;
-            font-weight: bold;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid white;
-            width: fit-content;
-            margin: auto;
-            animation: typing 3s steps(20, end) infinite, blink 0.5s step-end infinite alternate;
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-
-        /* Countdown */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        .box {
-            background: #d60000;
-            padding: 12px 18px;
-            font-size: 18px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        /* Contact Form */
-        .contact {
-            padding: 30px;
-            background-color: #1a2238;
-            text-align: center;
-            margin: 30px;
-            border-radius: 5px;
-        }
-        .input-field {
-            width: 80%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        /* Footer */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            padding: 15px;
-            background-color: #1a2238;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Header & Menu -->
-    <header>
-        <span>GlobalXpose</span>
-        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-    </header>
-    <div id="menu" class="menu">
-        <a href="#home">Home</a>
-        <a href="#contact">Contact</a>
-    </div>
+    <!-- Header -->
+    <h1>GlobalXpose</h1>
 
-    <!-- Typing Effect -->
-    <div class="typing-container">
-        GlobalXpose is Coming Soon...
-    </div>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">String Operations</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#">Pornography</a></li>
+            <li><a href="#">Terrorism</a></li>
+            <li><a href="#">YouTubers</a></li>
+            <li><a href="#">Teachings</a></li>
+            <li><a href="#">Donate Us</a></li>
+            <li><a href="#">Pricing</a></li>
+        </ul>
+    </nav>
 
-    <!-- Countdown Timer -->
-    <div class="countdown">
-        <div class="box">
-            <span id="days">00</span><br>Days
-        </div>
-        <div class="box">
-            <span id="hours">00</span><br>Hours
-        </div>
-        <div class="box">
-            <span id="minutes">00</span><br>Minutes
-        </div>
-        <div class="box">
-            <span id="seconds">00</span><br>Seconds
-        </div>
-    </div>
+    <!-- Typing Effect Placeholder -->
+    <h2>Uncovering the Truth with GlobalXpose...</h2>
+
+    <!-- Coming Soon Text -->
+    <p>We are working hard to bring the truth to light. Stay tuned!</p>
 
     <!-- Contact Form -->
-    <div id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form action="mailto:globalxpose@gmail.com" method="post" enctype="text/plain">
-            <input type="text" class="input-field" name="name" placeholder="Your Name" required><br>
-            <input type="email" class="input-field" name="email" placeholder="Your Email" required><br>
-            <textarea class="input-field" name="message" placeholder="Your Message" rows="4" required></textarea><br>
-            <button type="submit" class="box">Send Message</button>
-        </form>
-    </div>
+    <h2>Contact Us</h2>
+    <form action="mailto:globalxpose@gmail.com" method="post" enctype="text/plain">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="4" required></textarea><br><br>
+
+        <input type="submit" value="Send">
+    </form>
 
     <!-- Footer -->
-    <div class="footer">
-        &copy; 2025 GlobalXpose. All rights reserved.
-    </div>
-
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
-
-        function updateCountdown() {
-            const targetDate = new Date("June 14, 2026 00:00:00").getTime();
-            const now = new Date().getTime();
-            const difference = targetDate - now;
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-        }
-
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+    <footer>
+        <p>&copy; 2025 GlobalXpose. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
-
