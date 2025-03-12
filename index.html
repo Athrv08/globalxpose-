@@ -4,11 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalXpose - Coming Soon</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0f1e; /* Black-Blue Theme */
+            color: white;
+            text-align: center;
+        }
+
+        /* Header & Menu */
+        header {
+            background-color: #0b132b;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #1a2238;
+            padding: 10px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+        }
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .box {
+            background: #d60000;
+            padding: 12px 18px;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #1a2238;
+        }
+    </style>
+    <script>
+        function updateCountdown() {
+            const targetDate = new Date("June 14, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </head>
 <body>
 
     <!-- Header -->
-    <h1>GlobalXpose</h1>
+    <header>GlobalXpose</header>
 
     <!-- Navigation Menu -->
     <nav>
@@ -25,31 +114,30 @@
         </ul>
     </nav>
 
-    <!-- Typing Effect Placeholder -->
-    <h2>Uncovering the Truth with GlobalXpose...</h2>
-
-    <!-- Coming Soon Text -->
-    <p>We are working hard to bring the truth to light. Stay tuned!</p>
-
-    <!-- Contact Form -->
-    <h2>Contact Us</h2>
-    <form action="mailto:globalxpose@gmail.com" method="post" enctype="text/plain">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
-
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
-
-        <label>Message:</label><br>
-        <textarea name="message" rows="4" required></textarea><br><br>
-
-        <input type="submit" value="Send">
-    </form>
+    <!-- Coming Soon Section -->
+    <div class="coming-soon">
+        <h1>GlobalXpose is Coming Soon</h1>
+        <p>"Uncovering the hidden truths, one step at a time."</p>
+        <div class="countdown">
+            <div class="box">
+                <span id="days">00</span><br>Days
+            </div>
+            <div class="box">
+                <span id="hours">00</span><br>Hours
+            </div>
+            <div class="box">
+                <span id="minutes">00</span><br>Minutes
+            </div>
+            <div class="box">
+                <span id="seconds">00</span><br>Seconds
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 GlobalXpose. All rights reserved.</p>
-    </footer>
+    <div class="footer">
+        &copy; 2025 GlobalXpose. All rights reserved.
+    </div>
 
 </body>
 </html>
